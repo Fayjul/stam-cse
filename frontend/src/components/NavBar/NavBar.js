@@ -9,7 +9,7 @@ export default function NavBar() {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand href="/">
-          Shahjalal University of Science and Technology
+          <h3>Shahjalal University of Science and Technology</h3>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -27,9 +27,9 @@ export default function NavBar() {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Dank memes
+            <Nav.Link href="/login">Login</Nav.Link>
+            <Nav.Link eventKey={2} href="/signup">
+              Resister
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
