@@ -1,7 +1,13 @@
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
+import NavBar from './components/Nav/NavBar';
 
 function App() {
-  return <p>Nothing added</p>;
+  return (
+    <div>
+      <NavBar></NavBar>
+    </div>
+  );
 }
 
 export default App;
