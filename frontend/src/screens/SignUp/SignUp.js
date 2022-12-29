@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './SignUp.css';
 import {
   MDBBtn,
   MDBContainer,
@@ -9,6 +10,22 @@ import {
 } from 'mdb-react-ui-kit';
 
 export default function SignUp() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      //toast.error('Password do not match');
+      console.log('passward not match');
+      return;
+    } else {
+      console.log(name, email, password);
+    }
+  };
+
   return (
     <MDBContainer
       fluid
@@ -28,6 +45,7 @@ export default function SignUp() {
             size="lg"
             id="form1"
             type="text"
+            onChange={(e) => setName(e.target.value)}
           />
           <MDBInput
             wrapperClass="mb-4"
@@ -35,6 +53,7 @@ export default function SignUp() {
             size="lg"
             id="form2"
             type="email"
+            onChange={(e) => setEmail(e.target.value)}
           />
           <MDBInput
             wrapperClass="mb-4"
@@ -42,6 +61,7 @@ export default function SignUp() {
             size="lg"
             id="form3"
             type="password"
+            onChange={(e) => setPassword(e.target.value)}
           />
           <MDBInput
             wrapperClass="mb-4"
@@ -49,6 +69,7 @@ export default function SignUp() {
             size="lg"
             id="form4"
             type="password"
+            onChange={(e) => setConfirmPassword(e.target.value)}
           />
           <div className="d-flex flex-row justify-content-center mb-4">
             <MDBCheckbox
@@ -57,7 +78,11 @@ export default function SignUp() {
               label="I agree all statements in Terms of service"
             />
           </div>
-          <MDBBtn className="mb-4 w-100 gradient-custom-4" size="lg">
+          <MDBBtn
+            onClick={(e) => submitHandler(e)}
+            className="mb-4 w-100 gradient-custom-4"
+            size="lg"
+          >
             Register
           </MDBBtn>
           <p>
