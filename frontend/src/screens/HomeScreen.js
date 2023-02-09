@@ -7,6 +7,10 @@ import Product from '../components/Product';
 import { Helmet } from 'react-helmet-async';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import { CCarousel, CCarouselItem, CImage } from '@coreui/react';
+import sust1 from '../images/sust1.jpg';
+import sust2 from '../images/2.png';
+import sust3 from '../images/4.png';
 // import data from '../data';
 import './HomeScreen.css';
 
@@ -70,6 +74,17 @@ function HomeScreen() {
           </Row>
         )}
       </div>
+      <CCarousel controls transition="crossfade">
+        <CCarouselItem>
+          <CImage className="d-block w-50" src={sust1} alt="slide 1" />
+        </CCarouselItem>
+        <CCarouselItem>
+          <CImage className="d-block w-50" src={sust2} alt="slide 2" />
+        </CCarouselItem>
+        <CCarouselItem>
+          <CImage className="d-block w-50" src={sust3} alt="slide 3" />
+        </CCarouselItem>
+      </CCarousel>
     </div>
   );
 }
