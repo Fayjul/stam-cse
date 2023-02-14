@@ -1,16 +1,22 @@
-import { useEffect, useReducer, useState } from 'react';
+import { useEffect, useReducer } from 'react';
 import axios from 'axios';
 import logger from 'use-reducer-logger';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Product from '../components/Product';
 import { Helmet } from 'react-helmet-async';
+import Carousel from 'react-grid-carousel';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
-import { CCarousel, CCarouselItem, CImage } from '@coreui/react';
 import sust1 from '../images/sust1.jpg';
 import sust2 from '../images/2.png';
 import sust3 from '../images/4.png';
+import sust4 from '../images/5.png';
+import sust5 from '../images/6.png';
+import sust6 from '../images/7.png';
+import sust7 from '../images/sust2.jpg';
+import sust8 from '../images/sust3.jpg';
+
 // import data from '../data';
 import './HomeScreen.css';
 
@@ -52,7 +58,7 @@ function HomeScreen() {
         <title>STAM:CSE</title>
       </Helmet>
       <br></br>
-      <div class="container2">
+      <div className="container2">
         <h1>there is a background</h1>
         <div>Centered</div>
       </div>
@@ -74,17 +80,35 @@ function HomeScreen() {
           </Row>
         )}
       </div>
-      <CCarousel controls transition="crossfade">
-        <CCarouselItem>
-          <CImage className="d-block w-50" src={sust1} alt="slide 1" />
-        </CCarouselItem>
-        <CCarouselItem>
-          <CImage className="d-block w-50" src={sust2} alt="slide 2" />
-        </CCarouselItem>
-        <CCarouselItem>
-          <CImage className="d-block w-50" src={sust3} alt="slide 3" />
-        </CCarouselItem>
-      </CCarousel>
+      <div>
+        <br />
+        <h1>SUST Photo Gallery</h1>
+        <div className="width-3rem height-4 rounded bg-primary mx-auto"></div>
+        <Carousel cols={7} showDots loop>
+          <Carousel.Item>
+            <img src={sust1} alt="sust1" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src={sust2} alt="sust1" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src={sust3} alt="sust1" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src={sust4} alt="sust1" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src={sust5} alt="sust1" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src={sust6} alt="sust1" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src={sust7} alt="sust1" />
+          </Carousel.Item>
+        </Carousel>
+        <br />
+      </div>
     </div>
   );
 }
