@@ -4,7 +4,7 @@
 
 ## Clone repository
 
-$ git clone https://github.com/Fayjul/rizik-web-project.git
+$ git clone https://github.com/Fayjul/stam-cse.git
 <br>
 $ cd stam-cse
 
