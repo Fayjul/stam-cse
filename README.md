@@ -11,7 +11,9 @@ $ cd stam-cse
 ## .env file
 
 you Need to set a .env file on backend folder. Which contain
-.....
+<br>
+JWT_SECRET = a secret key for password encription
+MONGODB_URI = Your database link
 
 ## run backend
 

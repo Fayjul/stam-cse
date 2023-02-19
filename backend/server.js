@@ -9,6 +9,7 @@ import orderRouter from './routes/orderRoutes.js';
 import uploadRouter from './routes/uploadRoutes.js';
 import paperRouter from './routes/paperRouter.js';
 import cors from 'cors';
+import projectRouter from './routes/projectRoutes.js';
 
 dotenv.config();
 
@@ -38,8 +39,9 @@ app.use('/api/upload', uploadRouter);
 app.use('/api/seed', seedRouter);
 app.use('/api/products', productRouter);
 app.use('/api/users', userRouter);
-app.use('/api/orders', orderRouter);
+//app.use('/api/orders', orderRouter);
 app.use('/api/papers', paperRouter);
+app.use('/api/projects', projectRouter);
 
 const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, '/frontend/build')));

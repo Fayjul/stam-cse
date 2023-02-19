@@ -11,8 +11,8 @@ function UploadPoject() {
 
   const redirect = '/';
 
-  const [paperName, setPaperName] = useState('');
-  const [gitlink, setGitlink] = useState('');
+  const [projectName, setProjectName] = useState('');
+  const [github, setGithub] = useState('');
   const [videoLink, setVideoLink] = useState('');
   const [description, setDescription] = useState('');
   const [course, setCourse] = useState('');
@@ -21,24 +21,26 @@ function UploadPoject() {
   const handleAddPaper = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post('api/papers/upload', {
-        paperName,
+      const { data } = await axios.post('api/projects/upload', {
+        projectName,
         course,
         description,
         batch,
-        gitlink,
+        github,
         videoLink,
       });
+      console.log(data);
       navigate(redirect || '/');
     } catch (err) {
       toast.error(getError(err));
+      console.log(err);
     }
     console.log(
-      paperName,
+      projectName,
       course,
       description,
       batch,
-      gitlink,
+      github,
       videoLink,
       batch
     );
@@ -52,7 +54,7 @@ function UploadPoject() {
           <Form.Label>Name of this Poject</Form.Label>
           <Form.Control
             required
-            onChange={(e) => setPaperName(e.target.value)}
+            onChange={(e) => setProjectName(e.target.value)}
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="course">
@@ -79,7 +81,7 @@ function UploadPoject() {
         </Form.Group>
         <Form.Group className="mb-3" controlId="github">
           <Form.Label>Github</Form.Label>
-          <Form.Control required onChange={(e) => setGitlink(e.target.value)} />
+          <Form.Control required onChange={(e) => setGithub(e.target.value)} />
         </Form.Group>
         <div className="mb-3">
           <Button type="submit" onClick={handleAddPaper}>
