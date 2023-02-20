@@ -20,6 +20,7 @@ function UploadPoject() {
 
   const handleAddPaper = async (e) => {
     e.preventDefault();
+    navigate(redirect || '/');
     try {
       const { data } = await axios.post('api/projects/upload', {
         projectName,
@@ -29,21 +30,10 @@ function UploadPoject() {
         github,
         videoLink,
       });
-      console.log(data);
-      navigate(redirect || '/');
     } catch (err) {
       toast.error(getError(err));
       console.log(err);
     }
-    console.log(
-      projectName,
-      course,
-      description,
-      batch,
-      github,
-      videoLink,
-      batch
-    );
   };
 
   return (
