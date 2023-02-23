@@ -9,8 +9,9 @@ export default function Project(props) {
       <Card.Body>
         <Card.Title>Paper Name : {project.projectName}</Card.Title>
 
-        <Card.Text>Topic : {project.topic}</Card.Text>
+        <Card.Text>Course : {project.course}</Card.Text>
         <Card.Text>Batch : {project.batch}</Card.Text>
+        <Card.Text>Description : {project.description}</Card.Text>
         <a href={project.video}>
           <Button>Click for Video </Button>
         </a>
