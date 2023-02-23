@@ -9,6 +9,7 @@ import uploadRouter from './routes/uploadRoutes.js';
 import paperRouter from './routes/paperRouter.js';
 import cors from 'cors';
 import projectRouter from './routes/projectRoutes.js';
+import experienceRouter from './routes/experieceRouter.js';
 
 dotenv.config();
 
@@ -40,6 +41,7 @@ app.use('/api/products', productRouter);
 app.use('/api/users', userRouter);
 app.use('/api/papers', paperRouter);
 app.use('/api/projects', projectRouter);
+app.use('/api/experience', experienceRouter);
 
 const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, '/frontend/build')));

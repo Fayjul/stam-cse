@@ -23,6 +23,7 @@ import logo from './images/sust-logo.png';
 import nameimage from './images/sust_name_omegle.png';
 import UploadPoject from './components/UploadProject';
 import ProjectScreen from './screens/ProjectScreen';
+import ShareExpeScreen from './screens/ShareExpeScreen';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -135,6 +136,10 @@ function App() {
               <Route path="/uploadprojects" element={<UploadPoject />} />
               <Route path="/papers" element={<PapersScreen />} />
               <Route path="/projects" element={<ProjectScreen />} />
+              <Route
+                path="/share_your_experience"
+                element={<ShareExpeScreen />}
+              />
               <Route path="/" element={<HomeScreen />} />
             </Routes>
           </Container>
