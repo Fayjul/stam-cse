@@ -24,6 +24,7 @@ import nameimage from './images/sust_name_omegle.png';
 import UploadPoject from './components/UploadProject';
 import ProjectScreen from './screens/ProjectScreen';
 import ShareExpeScreen from './screens/ShareExpeScreen';
+import ExperienceScreen from './screens/ExperienceScreen';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -140,6 +141,7 @@ function App() {
                 path="/share_your_experience"
                 element={<ShareExpeScreen />}
               />
+              <Route path="/see_experience" element={<ExperienceScreen />} />
               <Route path="/" element={<HomeScreen />} />
             </Routes>
           </Container>

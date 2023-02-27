@@ -14,3 +14,12 @@
   color: red;
   align-self: center;
 }
+.name-experience {
+  font-size: 70px;
+  color: red;
+}
+.experience-card {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
