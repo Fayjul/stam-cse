@@ -25,6 +25,7 @@ import UploadPoject from './components/UploadProject';
 import ProjectScreen from './screens/ProjectScreen';
 import ShareExpeScreen from './screens/ShareExpeScreen';
 import ExperienceScreen from './screens/ExperienceScreen';
+import PaperSearch from './screens/PaperSearch';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -136,6 +137,7 @@ function App() {
               <Route path="/uploadpaper" element={<FormComponent />} />
               <Route path="/uploadprojects" element={<UploadPoject />} />
               <Route path="/papers" element={<PapersScreen />} />
+              <Route path="/papers/search" element={<PaperSearch />} />
               <Route path="/projects" element={<ProjectScreen />} />
               <Route
                 path="/share_your_experience"

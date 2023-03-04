@@ -9,7 +9,10 @@ paperRouter.get('/', async (req, res) => {
   console.log('I am in database');
   res.send(papers);
 });
-
+paperRouter.get('/search', async (req, res) => {
+  const papers = await Paper.find({ topic: 'NLP' });
+  res.send(papers);
+});
 paperRouter.post(
   '/upload',
   expressAsyncHandler(async (req, res) => {
