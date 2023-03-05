@@ -12,7 +12,7 @@ export default function Paper(props) {
         <Card.Text>Topic : {paper.topic}</Card.Text>
         <Card.Text>Batch : {paper.batch}</Card.Text>
         <a href={paper.pdf}>
-          <Button>Click for </Button>
+          <Button variant="info">Read this paper</Button>
         </a>
       </Card.Body>
     </Card>

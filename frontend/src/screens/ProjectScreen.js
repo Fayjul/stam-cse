@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/esm/Col';
 import Row from 'react-bootstrap/Row';
 import { Helmet } from 'react-helmet-async';
 import Project from '../components/Project';
+import SearchBox2 from '../components/SearchBox2';
 //import Paper from '../components/Paper';
 
 function ProjectScreen() {
@@ -20,6 +21,7 @@ function ProjectScreen() {
       </Helmet>
       <h1>All Project Of STAM:CSE</h1>
       <br></br>
+      <SearchBox2 />
       <div>
         {
           <Row>

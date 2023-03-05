@@ -9,9 +9,10 @@ import SearchBox from '../components/SearchBox';
 import axios from 'axios';
 import { getError } from '../utils';
 import { toast } from 'react-toastify';
+import Project from '../components/Project';
 
-function PaperSearch() {
-  const [papers, setPapers] = useState([]);
+function ProjectSearch() {
+  const [projects, setProjects] = useState([]);
   const navigate = useNavigate();
   const { search } = useLocation();
   const sp = new URLSearchParams(search);
@@ -19,9 +20,9 @@ function PaperSearch() {
   console.log(topic);
 
   useEffect(() => {
-    fetch(`/api/papers/search?topic=${topic}`)
+    fetch(`/api/projects/search?topic=${topic}`)
       .then((res) => res.json())
-      .then((data) => setPapers(data));
+      .then((data) => setProjects(data));
   }, []);
 
   return (
@@ -29,15 +30,15 @@ function PaperSearch() {
       <Helmet>
         <title>STAM:CSE</title>
       </Helmet>
-      <h1>All Paper from paper search </h1>
+      <h1>Here All project According to your search. </h1>
       <SearchBox />
       <br></br>
       <div>
         {
           <Row>
-            {papers.map((paper) => (
-              <Col key={paper._id} sm={6} md={4} lg={4} className="mb-3">
-                <Paper paper={paper}></Paper>
+            {projects.map((project) => (
+              <Col key={project._id} sm={6} md={4} lg={4} className="mb-3">
+                <Project project={project}></Project>
               </Col>
             ))}
           </Row>
@@ -46,4 +47,4 @@ function PaperSearch() {
     </div>
   );
 }
-export default PaperSearch;
+export default ProjectSearch;

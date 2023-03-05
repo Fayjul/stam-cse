@@ -10,6 +10,12 @@ projectRouter.get('/', async (req, res) => {
   console.log('I am in database from project Router');
   res.send(project);
 });
+projectRouter.get('/search', async (req, res) => {
+  const project = await Project.find({ course: 'Database' });
+  //const papers = await Paper.find();
+  console.log('I am in database from project Router');
+  res.send(project);
+});
 projectRouter.post(
   '/upload',
   expressAsyncHandler(async (req, res) => {

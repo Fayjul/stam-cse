@@ -58,11 +58,7 @@ function HomeScreen() {
         <title>STAM:CSE</title>
       </Helmet>
       <br></br>
-      <div className="container2">
-        <h1>there is a background</h1>
-        <div>Centered</div>
-      </div>
-      <br />
+
       <h1 className="feature">Here is All of Our feature</h1>
       <br />
       <div className="products">

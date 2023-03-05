@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/esm/Button';
 
 export default function Experience(props) {
+  const [see, setSee] = useState(false);
   const { experience } = props;
+  const handleSee = () => {
+    if (see) {
+      setSee(false);
+    } else {
+      setSee(true);
+    }
+  };
   return (
     <Card>
       <Card.Body>
@@ -15,7 +24,14 @@ export default function Experience(props) {
         <Card.Text>
           <h3>He is a student of batch {experience.batch}</h3>
         </Card.Text>
-        <Card.Text>{experience.experience}</Card.Text>
+        {see ? (
+          <>
+            <Card.Text>{experience.experience}</Card.Text>
+            <Button onClick={handleSee}>Close</Button>
+          </>
+        ) : (
+          <Button onClick={handleSee}>Read Experience</Button>
+        )}
       </Card.Body>
     </Card>
   );

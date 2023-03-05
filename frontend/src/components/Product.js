@@ -19,7 +19,7 @@ function Product(props) {
 
         <Card.Text>{product.text}</Card.Text>
         <Link to={`/${product.slug}`}>
-          <Button variant="primary">Click for {product.name}</Button>
+          <Button variant="success">Click for {product.name}</Button>
         </Link>
       </Card.Body>
     </Card>

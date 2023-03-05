@@ -10,6 +10,7 @@ paperRouter.get('/', async (req, res) => {
   res.send(papers);
 });
 paperRouter.get('/search', async (req, res) => {
+  console.log(req.body);
   const papers = await Paper.find({ topic: 'NLP' });
   res.send(papers);
 });

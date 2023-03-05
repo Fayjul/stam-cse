@@ -26,6 +26,7 @@ import ProjectScreen from './screens/ProjectScreen';
 import ShareExpeScreen from './screens/ShareExpeScreen';
 import ExperienceScreen from './screens/ExperienceScreen';
 import PaperSearch from './screens/PaperSearch';
+import ProjectSearch from './screens/ProjectSearch';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -139,6 +140,7 @@ function App() {
               <Route path="/papers" element={<PapersScreen />} />
               <Route path="/papers/search" element={<PaperSearch />} />
               <Route path="/projects" element={<ProjectScreen />} />
+              <Route path="/project/search" element={<ProjectSearch />} />
               <Route
                 path="/share_your_experience"
                 element={<ShareExpeScreen />}
